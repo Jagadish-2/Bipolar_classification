@@ -1,0 +1,178 @@
+{% load static %}
+
+
+
+
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bipolar  report</title>
+
+<link href="{%static 'css/bootstrap.min.css' %}" rel="stylesheet" id="bootstrap-css">
+<script src="{%static 'js/bootstrap.min.js' %}"></script>
+<script src="{%static 'js/jquery.min.js' %}"></script>
+<link href="{%static 'css/font-awesome.min.css' %}" rel="stylesheet" id="bootstrap-css">
+ 
+    <!--Fontawesome CDN-->
+	<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"  >
+
+	<!--Custom styles-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/all2.css' %}">
+    <!-- <script src="{% static 'js/myscript.js' %}"></script> -->
+    <style>
+        body{
+            /* background-image: url('{% static 'images/452582.jpg' %}'); */
+        }
+    </style>
+	
+</head>
+
+<body >
+<div id="snowflakeContainer">
+<span class="snowflake"> <h1 color="green"> Bipolar disorder</h1></span>
+</div>
+
+
+<div class="container" >
+	<!--<h1> EMR Data Analysis System to Predict Various Diseases</h1> -->
+		<!--<h1 class="display-6">EMR Data Analysis System to Predict Various Diseases </h1> -->
+	
+	
+	
+		<!-- <div id="doctor"></div> -->
+
+		
+		
+
+
+
+
+	<div class="d-flex justify-content-center h-100 float-md-center option-doctor">
+	
+	
+	
+		<div class="card"  style="width: 50rem; height: 90rem;">
+			<div class="card-header">
+				<h3>Fill the details</h3>
+				 
+			</div>
+			
+			<div class="card-body" >
+				<form action="predBipolar" method="POST">
+					{% csrf_token %}
+
+					<h4 style=color:white>Doctor name:</h4>
+					<div class="input-group form-group">
+						 
+						<input type="text" class="form-control" placeholder="Doctor name"   name = "docname" required>
+						
+					</div>
+					
+					<h4 style=color:white>Patient email:</h4>
+					<div class="input-group form-group">
+						 
+						<input type="text" class="form-control" placeholder="Patient email:"   name = "pemail" required>
+						
+					</div>
+					
+					<h4 style=color:white>Report of:</h4>
+					<div class="input-group form-group">
+						 
+						<input type="text" class="form-control" placeholder="Report of"   name = "reportof" value = "Bipolar Disease" readonly>
+						
+                    </div>
+
+					 
+					<h4 style=color:white>Age:</h4>	
+					<div class="input-group form-group">
+						 
+						<input type="text" class="form-control" placeholder="Age"   name = "Age" required>
+						
+                    </div>
+                    <h4 style=color:white>Right_answers:</h4>
+                    <div class="input-group form-group">
+						 
+						<input type="text" class="form-control" placeholder="Right_answers"   name = "Right_answers" required>
+						
+                    </div>
+                    <h4 style=color:white>Audio_prosody:</h4>
+                    <div class="input-group form-group">
+						 
+						<input type="text" class="form-control" placeholder="Audio_prosody"   name = "Audio_prosody" required>
+						
+                    </div>
+                    <h4 style=color:white>Combined_channel:</h4>
+                    <div class="input-group form-group">
+						 
+						<input type="text" class="form-control" placeholder="Combined_channel"   name = "Combined_channel" required>
+						
+                    </div>
+                    <h4 style=color:white>Face_video:</h4>
+                    <div class="input-group form-group">
+						 
+						<input type="text" class="form-control" placeholder=" Face_video"   name = "Face_video" required>
+						
+                    </div>
+                    <h4 style=color:white>Body_video:</h4>
+                    <div class="input-group form-group">
+						 
+						<input type="text" class="form-control" placeholder=" Body_video"   name = "Body_video" required>
+						
+                    </div>
+                    
+                    <h4 style=color:white>Positive_valence:</h4>
+                    <div class="input-group form-group">
+						 
+						<input type="text" class="form-control" placeholder=" Positive_valence"   name = "Positive_valence" required>
+						
+                    </div>
+                    
+                    <h4 style=color:white>Negative_valence:</h4>
+                    <div class="input-group form-group">
+						 
+						<input type="text" class="form-control" placeholder=" Negative_valence"   name = "Negative_valence" required>
+						
+                    </div>
+                    
+                    <h4 style=color:white>Dominant:</h4>
+                    <div class="input-group form-group">
+						 
+						<input type="text" class="form-control" placeholder=" Dominant"   name = "Dominant" required>
+						
+                    </div>
+                    
+                    <h4 style=color:white>Submissive:</h4>
+                    <div class="input-group form-group">
+						 
+						<input type="text" class="form-control" placeholder=" Submissive"   name = "Submissive" required>
+						
+					</div>
+ 
+					 
+					<div class="form-group d-flex justify-content-center">
+						<input type="submit" value="Submit" class="btn btn-primary float-right login_btn " style='background-color:rgb(0, 4, 255)'>
+					</div>
+				</form>
+			</div>
+			
+			 
+
+
+				 
+			</div>
+		</div>
+	</div>
+	 
+</div>
+
+<div>
+	{% for message in messages %}
+	<h6>{{message}}</h6>
+	{% endfor %}
+</div>
+
+
+
+</body>

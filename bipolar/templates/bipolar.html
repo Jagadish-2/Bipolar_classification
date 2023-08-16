@@ -1,0 +1,377 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bipolar</title>
+
+        <!-- Google Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/owl.carousel.css">
+        <link rel="stylesheet" href="./static/styles/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+
+<script language="javascript">
+            function check_bipolar(){
+                //var itemid=document.getElementById("itemid").value;
+                var count1=0,count2=0,count3=0,count4=0,count5=0;
+                if(document.getElementById('r1').checked == true) {  count1++;} 
+                if(document.getElementById('r2').checked == true) {  count1++;} 
+                if(document.getElementById('r3').checked == true) {  count1++;} 
+                if(document.getElementById('r4').checked == true) {  count1++;} 
+                if(document.getElementById('r5').checked == true) {  count1++;} 
+                if(document.getElementById('r6').checked == true) {  count1++;} 
+                if(document.getElementById('r7').checked == true) {  count1++;} 
+                if(document.getElementById('r8').checked == true) {  count1++;} 
+                if(document.getElementById('r9').checked == true) {  count1++;} 
+                if(document.getElementById('r10').checked == true) {  count1++;} 
+                if(document.getElementById('r11').checked == true) {  count1++;} 
+                if(document.getElementById('r12').checked == true) {  count1++;} 
+                if(document.getElementById('r13').checked == true) {  count1++;} 
+                if(document.getElementById('r2nd').checked == true) {  count2++;}
+                // if(document.getElementById('r3rd1').checked == true) {  count3++;}
+                // if(document.getElementById('r3rd2').checked == true) {  count3++;}
+                if(document.getElementById('r3rd3').checked == true) {  count3++;}
+                if(document.getElementById('r3rd4').checked == true) {  count3++;}
+                if(document.getElementById('r4th').checked == true) {  count4++;}
+                if(document.getElementById('r5th').checked == true) {  count5++;}
+
+                alert(count1);
+                alert(count2);
+                alert(count3);
+                alert(count4);
+                alert(count5);
+                var check=0;
+
+                if(count1>=7)
+                {
+                    check++;
+                }
+
+                if(count2==1)
+                {
+                    check++;
+                }
+                if(count3==1)
+                {
+                    check++;
+                }
+                if(count4==1)
+                {
+                    check++;
+                }
+                if(count5==1)
+                {
+                    check++;
+                }
+                if(check>=3)
+                {
+
+                    alert("Bipolar tested positive");
+                    alert("You have test positive for bipoalr please meet the doctor for further treatment");
+
+
+
+                   // document.getElementById('msg').innerHTML="Meet Doc";
+                    window.location.replace('./bipolar_msg');
+                 //  window.location.href='./user_signup';
+                }
+                else{
+
+                    alert("No Bipolar");
+                }
+
+                    
+                    
+                    
+                }
+                
+                
+                
+            
+            </script>
+
+
+
+<style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    </style>
+    </head>
+ 
+    <body>
+          
+
+        <div class="site-branding-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                            <div class="logo">
+                            <h1>Bipolar</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- End site branding area -->
+
+        <div class="mainmenu-area">
+            <div class="container">
+                <div class="row">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div> 
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+
+                          
+                            <li><a href="./user_home">Home</a></li>
+                            <li><a href="./bipolar">Test Bipolar</a></li>
+                         
+                            <li><a href="/templates/patient/home.html">Logout</a></li>
+                            
+                        </ul>
+
+
+                    </div>  
+                </div>
+            </div>
+        </div> <!-- End mainmenu area -->
+        <div id="msg"></div>
+     <h1>Bipolar Disorder Questionnare</h1>
+     <h2>Instructions: Check ( ✓) the answer that best applies to you.
+        Please answer each question as best you can</h2>
+					<form onsubmit="return check_bipolar();">
+						<table width="100%">
+                                                   
+							<tr>
+								<td width="70%">1. Has there ever been a period of time when you were not your usual self and…</td>
+                                                                <td>Yes &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp No</td>
+							</tr>
+							<tr>
+								<td width="70%">...you felt so good or so hyper that other people thought you were not your normal self or you were so hyper that you got into trouble?</td>
+								<td><input type="radio" name="r1" id="r1" value="yes" size="22" > &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="radio" name="r1" id="r1" value="no" size="22" ></td>
+							</tr>
+                            <tr>
+								<td width="70%">...you were so irritable that you shouted at people or started fights or arguments?</td>
+								<td><input type="radio" name="r2" id="r2" value="yes" size="22" > &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="radio" name="r2" id="r2" value="no" size="22" ></td>
+							</tr>
+                            <tr>
+								<td width="70%">...you felt much more self-confident than usual?</td>
+								<td><input type="radio" name="r3" id="r3" value="yes" size="22" > &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="radio" name="r3" id="r3" value="no" size="22" ></td>
+							</tr>
+                            <tr>
+								<td width="70%">...you got much less sleep than usual and found you didn’t really miss it?</td>
+								<td><input type="radio" name="r4" id="r4" value="yes" size="22" > &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="radio" name="r4" id="r4" value="no" size="22" ></td>
+							</tr>
+                            <tr>
+								<td width="70%">...you were much more talkative or spoke faster than usual?</td>
+								<td><input type="radio" name="r5" id="r5" value="yes" size="22" > &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="radio" name="r5" id="r5" value="no" size="22" ></td>
+							</tr>
+                            <tr>
+								<td width="70%">...thoughts raced through your head or you couldn’t slow your mind down?</td>
+								<td><input type="radio" name="r6" id="r6" value="yes" size="22" > &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="radio" name="r6" id="r6" value="no" size="22" ></td>
+							</tr>
+                            <tr>
+								<td width="70%">...you were so easily distracted by things around you that you had trouble concentrating or staying on track?</td>
+								<td><input type="radio" name="r7" id="r7" value="yes" size="22" > &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="radio" name="r7" id="r7" value="no" size="22" ></td>
+							</tr>
+                            <tr>
+								<td width="70%">...you had much more energy than usual?</td>
+								<td><input type="radio" name="r8" id="r8" value="yes" size="22" > &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="radio" name="r8" id="r8" value="no" size="22" ></td>
+							</tr>
+                            <tr>
+								<td width="70%">...you were much more active or did many more things than usual?</td>
+								<td><input type="radio" name="r9" id="r9" value="yes" size="22" > &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="radio" name="r9" id="r9" value="no" size="22" ></td>
+							</tr>
+                            <tr>
+								<td width="70%">...you were much more social or outgoing than usual, for example, you telephoned friends in the middle of the night?</td>
+								<td><input type="radio" name="r10" id="r10" value="yes" size="22" > &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="radio" name="r10" id="r10" value="no" size="22" ></td>
+							</tr>
+                            <tr>
+								<td width="70%">...you were much more interested in sex than usual?</td>
+								<td><input type="radio" name="r11" id="r11" value="yes" size="22" > &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="radio" name="r11" id="r11" value="no" size="22" ></td>
+							</tr>
+                           
+                            <tr>
+								<td width="70%">...you did things that were unusual for you or that other people might have thought were excessive, foolish, or risky?</td>
+								<td><input type="radio" name="r12" id="r12" value="yes" size="22" > &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="radio" name="r12" id="r12" value="no" size="22" ></td>
+							</tr>                                 
+                            <tr>
+								<td width="70%">...spending money got you or your family in trouble?</td>
+								<td><input type="radio" name="r13" id="r13" value="yes" size="22" > &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="radio" name="r13" id="r13" value="no" size="22" ></td>
+							</tr>   
+                            <tr>
+								<td width="70%">2. If you checked YES to more than one of the above, have several of these ever happened during the same period of time? Please check 1 response only.</td>
+                                <td><input type="radio" name="r2nd" id="r2nd" value="yes" size="22" > &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="radio" name="r2nd" id="r2nd" value="no" size="22" ></td>
+							</tr>
+
+                            <tr>
+								<td width="70%">3. How much of a problem did any of these cause you — like being able to work; having family, money, or legal troubles; getting into arguments or fights? Please check 1 response only.</br>
+                                    <input type="radio" name="r3rd" id="r3rd1" value="no" size="22" >No Problem 
+                                
+                                    <input type="radio" name="r3rd" id="r3rd2" value="no" size="22" >Minor Problem
+                                    <input type="radio" name="r3rd" id="r3rd3" value="yes" size="22" >Moderate Problem 
+                                
+                                    <input type="radio" name="r3rd" id="r3rd4" value="yes" size="22" >Serious Problem
+                                </td>
+							</tr>
+                            <tr>
+								<td width="70%">4. Have any of your blood relatives (ie, children, siblings, parents, grandparents, aunts, uncles) had manic-depressive illness or bipolar disorder?</td>
+                                <td><input type="radio" name="r4th" id="r4th" value="yes" size="22" > &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="radio" name="r4th" id="r4th" value="no" size="22" ></td>
+							</tr>
+                            <tr>
+								<td width="70%">5. Has a health professional ever told you that you have manic-depressive illness or bipolar disorder?</td>
+                                <td><input type="radio" name="r5th" id="r5th" value="yes" size="22" > &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="radio" name="r5th" id="r5th" value="no" size="22" ></td>
+							</tr>
+							<tr>
+								<td colspan="2" width="40%"><input type="submit"
+									value="Submit" /> </td>
+
+							</tr>
+						</table>
+					</form>
+
+        <div class="slider-area">
+            <div class="zigzag-bottom">
+              
+            </div>
+            <div id="slide-list" class="carousel carousel-fade slide" data-ride="carousel">
+
+                <div class="slide-bulletz">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ol class="carousel-indicators slide-indicators">
+                                    <li data-target="#slide-list" data-slide-to="0" class="active"></li>
+                                    <!--<li data-target="#slide-list" data-slide-to="1"></li>
+                                    <li data-target="#slide-list" data-slide-to="2"></li>-->
+                                </ol>                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+                
+                <!--<div class="carousel-inner" role="listbox">-->
+                    <div class="item active">
+                        <div class="single-slide">
+                            <div class="slide-bg slide-one"></div>
+                            <div class="slide-text-wrapper">
+                                <div class="slide-text">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-6 col-md-offset-6">
+                                                 <h3 style="color: #1abc9c;"></h3><br/>  </div>
+                                                 
+                                                  <center>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   <!-- <div class="item">
+                        <div class="single-slide">
+                            <div class="slide-bg slide-two"></div>
+                            <div class="slide-text-wrapper">
+                                <div class="slide-text">
+                                    <div class="container">
+                                        <div class="row">
+                                             <div class="col-md-6 col-md-offset-6">
+                                                 <h3 style="color: #1abc9c;">Smart College Lab</h3><br/>  </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="single-slide">
+                            <div class="slide-bg slide-three"></div>
+                            <div class="slide-text-wrapper">
+                                <div class="slide-text">
+                                    <div class="container">
+                                        <div class="row">
+                                             <div class="col-md-6 col-md-offset-6">
+                                                <h3 style="color: #1abc9c;">Smart College Lab</h3><br/> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+
+            </div>        
+        </div> <!-- End slider area -->
+
+
+
+
+
+        <!-- End product widget area -->
+
+        <!-- End footer top area -->
+
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="copyright">
+                            <p>&copy; 2022 Bipolar. All Rights Reserved.</p>
+                        </div>
+                    </div>
+
+                   
+                </div>
+            </div>
+        </div> <!-- End footer bottom area -->
+
+        <!-- Latest jQuery form server -->
+        <script src="https://code.jquery.com/jquery.min.js"></script>
+
+        <!-- Bootstrap JS form CDN -->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+        <!-- jQuery sticky menu -->
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery.sticky.js"></script>
+
+        <!-- jQuery easing -->
+        <script src="js/jquery.easing.1.3.min.js"></script>
+
+        <!-- Main Script -->
+        <script src="js/main.js"></script>
+    </body>
+</html> 

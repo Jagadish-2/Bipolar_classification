@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bipolar</title>
+
+        <!-- Google Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/owl.carousel.css">
+        <link rel="stylesheet" href="./static/styles/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+          
+      <script language="javascript">
+            function validate(){
+                var user=document.getElementById("u").value;
+                var pass=document.getElementById("p").value;
+              //  alert(user+'--'+pass);
+                if(user.length===0)
+                {
+                    alert("Please Enter The Username");
+                    return false;
+                }
+                else if(pass.length===0)
+                {
+                    alert("Please Enter The Password");
+                    return false;
+                }
+             
+                else if(pass.length<6)
+                {
+                    alert("Password must be greater than or equal to 6 ");
+                    return false;
+                }
+                else{
+                    var xmlDoc = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+ 
+                    xmlDoc.open('POST', 'http://127.0.0.1:5000/user_login_check?user='+user+'&pass='+pass, true);
+                    xmlDoc.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+                    xmlDoc.onreadystatechange = function() {
+                      if (xmlDoc.readyState === 4 && xmlDoc.status === 200) {
+                          var d=xmlDoc.responseText;
+                         // alert(d);
+                           d=d.substring(1,d.length-2); 
+                           alert(d);
+                        //var msg = new SpeechSynthesisUtterance();
+                        //msg.text = d;
+                        //window.speechSynthesis.speak(msg);
+                        if(d=='not matching'){
+                            alert("Please Enter Correct Email and Password");
+                              
+                        }
+                        else{
+                            alert("Welcome");
+                            
+                           
+                            window.location.replace('./user_home');
+                        }
+
+                        
+
+                      }
+                    };
+                    xmlDoc.send();
+                    
+                    
+                }
+        
+        
+            }
+        </script>
+    </head>
+    <body>
+       
+
+
+        <div class="site-branding-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="logo">
+                            <h1>Bipolar</h1>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div> <!-- End site branding area -->
+
+        <div class="mainmenu-area">
+            <div class="container">
+                <div class="row">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div> 
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                           <li class="active"><a href="./user_login">Login</a></li>
+                        <li ><a href="./user_signup">Signup</a></li>
+                         
+                        </ul>
+                    </div>  
+                </div>
+            </div>
+        </div> <!-- End mainmenu area -->
+
+        <div class="product-big-title-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="product-bit-title text-center">
+                            <h2>Login Form</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="single-product-area">
+            <div class="zigzag-bottom"></div>
+            <div class="container">
+                <div class="row">
+
+
+                    <div class="col-md-8">
+                        <div class="product-content-right">
+                            <div class="woocommerce">
+
+
+                                <center>  
+                                    <h2>User Login</h2>
+                           
+                            <form name="login"  onsubmit="return validate();">
+                                <table>
+                                    <tr>
+                                        <td style="font-size: 16px; font-weight: bold; color: black">Username :</td><td><input type="text" name="user" id="u" placeholder="User Name" style="width: 200px" /></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td style="font-size: 16px; font-weight: bold; color: black">Password :</td><td><input type="password" name="pass" id="p" placeholder="Password"  style="width: 200px" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <br/>
+                                        <td><input type="submit" name="submit"  style="width: 100px" value="Login"/>
+                                           </td>
+                                    </tr>
+                                </table>
+
+                            </form><br/><br/><br/>
+                            
+                           
+                            </div>                       
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="footer-top-area">
+            <div class="zigzag-bottom"></div>
+            <div class="container">
+                <div class="row">
+
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="copyright">
+                            <p>&copy; Bipolar. All Rights Reserved. </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="footer-card-icon">
+                            <i class="fa fa-cc-discover"></i>
+                            <i class="fa fa-cc-mastercard"></i>
+                            <i class="fa fa-cc-paypal"></i>
+                            <i class="fa fa-cc-visa"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Latest jQuery form server -->
+        <script src="https://code.jquery.com/jquery.min.js"></script>
+
+        <!-- Bootstrap JS form CDN -->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+        <!-- jQuery sticky menu -->
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery.sticky.js"></script>
+
+        <!-- jQuery easing -->
+        <script src="js/jquery.easing.1.3.min.js"></script>
+
+        <!-- Main Script -->
+        <script src="js/main.js"></script>
+    </body>
+</html>

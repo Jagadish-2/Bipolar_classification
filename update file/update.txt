@@ -1,0 +1,12 @@
+Add this two files to the existing code.
+
+1)option.HTML
+->Go to file location
+	->BipolarClassification->templates->doctor
+->Replace the option file with the updated option.HTML file
+
+2)reportpage.HTML
+->Go to file location
+	->BipolarClassification->templates->patient
+->Replace the reportpage file with the updated reportpage.HTML file
+

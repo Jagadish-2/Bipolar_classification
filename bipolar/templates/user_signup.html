@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bipolar</title>
+
+        <!-- Google Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/owl.carousel.css">
+        <link rel="stylesheet" href="./static/styles/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+
+<script language="javascript">
+            function signup(){
+                //var itemid=document.getElementById("itemid").value;
+                var name=document.getElementById("name").value;
+                var email=document.getElementById("email").value;
+                var mobile=document.getElementById("mobile").value;
+                var pass=document.getElementById("pass").value;
+                var cpass=document.getElementById("cpass").value;
+                var address=document.getElementById("address").value;
+                
+                
+                 var xmlDoc = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+ 
+                    xmlDoc.open('POST', 'http://127.0.0.1:5000/add_user?name='+name+'&email='+email+'&mobile='+mobile+'&pass='+pass+'&address='+address, true);
+                    xmlDoc.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+                    xmlDoc.onreadystatechange = function() {
+                      if (xmlDoc.readyState === 4 && xmlDoc.status === 200) {
+                          var d=xmlDoc.responseText;
+                         // alert(d);
+                          // d=d.substring(1,d.length-2); 
+                           alert(d);
+                        //var msg = new SpeechSynthesisUtterance();
+                        //msg.text = d;
+                        //window.speechSynthesis.speak(msg);
+                        if(d=='Details Added'){
+                            alert("Details Added");
+                              window.location.replace('./user_login');
+                        }
+
+
+                      }
+                    };
+                    xmlDoc.send();
+                    
+                    
+                }
+                
+                
+                
+            
+            </script>
+    </head>
+ 
+    <body>
+          
+
+        <div class="site-branding-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                            <div class="logo">
+                            <h1>Bipolar</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- End site branding area -->
+
+        <div class="mainmenu-area">
+            <div class="container">
+                <div class="row">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div> 
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+
+                          
+                   <li><a href="./">Home</a></li>
+                           
+                        <li><a href="./user_login">Login</a></li>
+                        <li class="active"><a href="./user_signup">Signup</a></li>
+                          
+                            
+                        </ul>
+
+
+                    </div>  
+                </div>
+            </div>
+        </div> <!-- End mainmenu area -->
+     <h1>User Signup</h1>
+					<form onsubmit="return signup();">
+						<table width="100%">
+                                                        <tr>
+								<td width="40%"> Name :</td>
+								<td><input type="text" name="name" id="name" size="22" /></td>
+							</tr>
+							<tr>
+								<td width="40%"> Email :</td>
+								<td><input type="text" name="email" id="email" size="22" /></td>
+							</tr>
+							<tr>
+								<td width="40%"> Mobile :</td>
+								<td><input type="text" name="mobile" id="mobile" size="22" /></td>
+							</tr>
+                                                        <tr>
+								<td width="40%"> Address :</td>
+                                                                <td><textarea id="address"></textarea></td>
+							</tr>
+	
+                                                        
+                                                                
+							<tr>
+								<td width="40%">Password:</td>
+								<td><input type="password" name="pass" id="pass" size="22" /></td>
+							</tr>
+                                                        <tr>
+								<td width="40%">Confirm:</td>
+								<td><input type="password" name="cpass" id="cpass" size="22" /></td>
+							</tr>
+
+							<tr>
+								<td colspan="2" width="40%"><input type="submit"
+									value="Register" /> </td>
+
+							</tr>
+						</table>
+					</form>
+
+        <div class="slider-area">
+            <div class="zigzag-bottom">
+              
+            </div>
+            <div id="slide-list" class="carousel carousel-fade slide" data-ride="carousel">
+
+                <div class="slide-bulletz">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ol class="carousel-indicators slide-indicators">
+                                    <li data-target="#slide-list" data-slide-to="0" class="active"></li>
+                                    <!--<li data-target="#slide-list" data-slide-to="1"></li>
+                                    <li data-target="#slide-list" data-slide-to="2"></li>-->
+                                </ol>                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+                
+                <!--<div class="carousel-inner" role="listbox">-->
+                    <div class="item active">
+                        <div class="single-slide">
+                            <div class="slide-bg slide-one"></div>
+                            <div class="slide-text-wrapper">
+                                <div class="slide-text">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-6 col-md-offset-6">
+                                                 <h3 style="color: #1abc9c;"></h3><br/>  </div>
+                                                 
+                                                  <center>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   <!-- <div class="item">
+                        <div class="single-slide">
+                            <div class="slide-bg slide-two"></div>
+                            <div class="slide-text-wrapper">
+                                <div class="slide-text">
+                                    <div class="container">
+                                        <div class="row">
+                                             <div class="col-md-6 col-md-offset-6">
+                                                 <h3 style="color: #1abc9c;">Smart College Lab</h3><br/>  </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="single-slide">
+                            <div class="slide-bg slide-three"></div>
+                            <div class="slide-text-wrapper">
+                                <div class="slide-text">
+                                    <div class="container">
+                                        <div class="row">
+                                             <div class="col-md-6 col-md-offset-6">
+                                                <h3 style="color: #1abc9c;">Smart College Lab</h3><br/> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+
+            </div>        
+        </div> <!-- End slider area -->
+
+
+
+
+
+        <!-- End product widget area -->
+
+        <!-- End footer top area -->
+
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="copyright">
+                            <p>&copy; 2021 E Restaurant. All Rights Reserved.</p>
+                        </div>
+                    </div>
+
+                   
+                </div>
+            </div>
+        </div> <!-- End footer bottom area -->
+
+        <!-- Latest jQuery form server -->
+        <script src="https://code.jquery.com/jquery.min.js"></script>
+
+        <!-- Bootstrap JS form CDN -->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+        <!-- jQuery sticky menu -->
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery.sticky.js"></script>
+
+        <!-- jQuery easing -->
+        <script src="js/jquery.easing.1.3.min.js"></script>
+
+        <!-- Main Script -->
+        <script src="js/main.js"></script>
+    </body>
+</html>
